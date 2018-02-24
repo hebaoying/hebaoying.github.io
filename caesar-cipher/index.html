@@ -1,0 +1,673 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="自我发展, 编程, 双拼自然码, 奥地利学派, 前端, 英语翻译" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/uploads/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="什么是凯撒密码?维基百科的定义很清楚:  在密码学中，恺撒密码（英语：Caesar cipher），或称恺撒加密、恺撒变换、变换加密，是一种最简单且最广为人知的加密技术。它是一种替换加密的技术，明文中的所有字母都在字母表上向后（或向前）按照一个固定数目进行偏移后被替换成密文。例如，当偏移量是3的时候，所有的字母A将被替换成D，B变成E，以此类推。这个加密方法是以罗马共和时期恺撒的名字命名的，当年恺">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一切乱码都是告白? ---如何破解凯撒密码">
+<meta property="og:url" content="http://yoursite.com/caesar-cipher/index.html">
+<meta property="og:site_name" content="折叠何宝莹">
+<meta property="og:description" content="什么是凯撒密码?维基百科的定义很清楚:  在密码学中，恺撒密码（英语：Caesar cipher），或称恺撒加密、恺撒变换、变换加密，是一种最简单且最广为人知的加密技术。它是一种替换加密的技术，明文中的所有字母都在字母表上向后（或向前）按照一个固定数目进行偏移后被替换成密文。例如，当偏移量是3的时候，所有的字母A将被替换成D，B变成E，以此类推。这个加密方法是以罗马共和时期恺撒的名字命名的，当年恺">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Caesar3.svg/480px-Caesar3.svg.png">
+<meta property="og:image" content="http://osaotfxwi.bkt.clouddn.com/img_caesar_decode.png">
+<meta property="og:updated_time" content="2018-02-24T13:03:48.064Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="一切乱码都是告白? ---如何破解凯撒密码">
+<meta name="twitter:description" content="什么是凯撒密码?维基百科的定义很清楚:  在密码学中，恺撒密码（英语：Caesar cipher），或称恺撒加密、恺撒变换、变换加密，是一种最简单且最广为人知的加密技术。它是一种替换加密的技术，明文中的所有字母都在字母表上向后（或向前）按照一个固定数目进行偏移后被替换成密文。例如，当偏移量是3的时候，所有的字母A将被替换成D，B变成E，以此类推。这个加密方法是以罗马共和时期恺撒的名字命名的，当年恺">
+<meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Caesar3.svg/480px-Caesar3.svg.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/caesar-cipher/"/>
+
+
+
+
+
+  <title> 一切乱码都是告白? ---如何破解凯撒密码 | 折叠何宝莹 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">折叠何宝莹</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/caesar-cipher/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="何宝莹">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="http://hebaoying.com/uploads/avatar.png">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="折叠何宝莹">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="折叠何宝莹" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                一切乱码都是告白? ---如何破解凯撒密码
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-27T11:24:00+08:00">
+                2017-07-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/caesar-cipher/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="caesar-cipher/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="什么是凯撒密码"><a href="#什么是凯撒密码" class="headerlink" title="什么是凯撒密码?"></a>什么是凯撒密码?</h3><p>维基百科的定义很清楚:</p>
+<blockquote>
+<p>在密码学中，恺撒密码（英语：Caesar cipher），或称恺撒加密、恺撒变换、变换加密，是一种最简单且最广为人知的加密技术。它是一种替换加密的技术，明文中的所有字母都在字母表上向后（或向前）按照一个固定数目进行偏移后被替换成密文。例如，当偏移量是3的时候，所有的字母A将被替换成D，B变成E，以此类推。这个加密方法是以罗马共和时期恺撒的名字命名的，当年恺撒曾用此方法与其将军们进行联系。</p>
+</blockquote>
+<p>或者看一下这个图示:<br><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Caesar3.svg/480px-Caesar3.svg.png" alt="凯撒加密"></p>
+<h3 id="为什么要了解凯撒加密"><a href="#为什么要了解凯撒加密" class="headerlink" title="为什么要了解凯撒加密?"></a>为什么要了解凯撒加密?</h3><p>作为战争时期的沟通, 这种加密方式算是比较原始的. 在非战争时期, 我们可以学这个来干嘛呢? 秀恩爱, 秀单身. 任君选择.</p>
+<h3 id="最简单的凯撒解密方法"><a href="#最简单的凯撒解密方法" class="headerlink" title="最简单的凯撒解密方法"></a>最简单的凯撒解密方法</h3><p>正如上面图示, 最简单的就是所有字母表向右移动一位, 所有的字母A被替代成B, 相应地, B被替代成C, 以此类推. 使用JavaScript编写的话很简单. 函数见下文:<br>输入两个变量就可以得到解密答案. 其中<code>s</code>是需要被解密的字符串, <code>shift</code>是偏移量, 往右偏移一位就是<code>1</code>, 往左偏移一位就是<code>-1</code>.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 先要定义一个 find 函数, 寻找 s2 在 s1 中的下标</span></span><br><span class="line"><span class="keyword">var</span> find = <span class="function"><span class="keyword">function</span>(<span class="params">s1, s2</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 初始下标是 -1, 如果找不到下标, 返回 -1</span></span><br><span class="line">    <span class="keyword">var</span> index = <span class="number">-1</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; s1.length; i++) &#123;</span><br><span class="line">        <span class="keyword">var</span> c = s1[i]</span><br><span class="line">        <span class="keyword">if</span> (c == s2) &#123;</span><br><span class="line">            index = i</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> index</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> decode3 = <span class="function"><span class="keyword">function</span>(<span class="params">s, shift</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> lower = <span class="string">'abcdefghijklmnopqrstuvwxyz'</span></span><br><span class="line">    <span class="comment">// 定义一个空的字符串</span></span><br><span class="line">    <span class="keyword">var</span> result = <span class="string">''</span></span><br><span class="line">    <span class="comment">// 遍历需要加密后的字符串</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; s.length; i++) &#123;</span><br><span class="line">        <span class="keyword">var</span> c = s[i]</span><br><span class="line">        <span class="keyword">var</span> index = find(lower, c)</span><br><span class="line">        <span class="keyword">if</span> (index == <span class="number">-1</span>) &#123;</span><br><span class="line">            result += c</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">var</span> len = lower.length</span><br><span class="line">            <span class="keyword">var</span> newIndex = (len + index - shift) % len</span><br><span class="line">            result += lower[newIndex]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="说好的秀恩爱-秀单身呢"><a href="#说好的秀恩爱-秀单身呢" class="headerlink" title="说好的秀恩爱, 秀单身呢?"></a>说好的秀恩爱, 秀单身呢?</h3><p><del>复杂一点的凯撒加密</del><br>知乎有一个求助题, 破译密码的<br>链接在此<br><a href="https://www.zhihu.com/question/28324597" target="_blank" rel="noopener">https://www.zhihu.com/question/28324597</a><br>一看就是凯撒加密, 不过在这里我们不清楚偏移值是多少, 所以我们只能1~25全都试一遍, 幸好英文字母只有26个对不对. 出来25个答案, 然后肉眼看看这些解密答案有没有意义.<br>这些全都可以自动完成. 答案如下:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 因为加密的字符串是大写字母, 我们需要把大写字母转成小写字母</span></span><br><span class="line"><span class="keyword">var</span> lowerCode = <span class="function"><span class="keyword">function</span>(<span class="params">code</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> lower = <span class="string">'abcdefghijklmnopqrstuvwxyz'</span></span><br><span class="line">    <span class="keyword">var</span> upper = <span class="string">'ABCDEFGHIJKLMNOPQRSTUVWXYZ'</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> result = <span class="string">''</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; code.length; i++) &#123;</span><br><span class="line">        <span class="keyword">var</span> c = code[i]</span><br><span class="line">        <span class="keyword">var</span> index = find(upper, c)</span><br><span class="line">        <span class="keyword">if</span> (index == <span class="number">-1</span>) &#123;</span><br><span class="line">            result += c</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            result += lower[index]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 开始解密了</span></span><br><span class="line"><span class="keyword">var</span> decode4 = <span class="function"><span class="keyword">function</span>(<span class="params">s</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> code = lowerCode(s)</span><br><span class="line">    <span class="keyword">var</span> lower = <span class="string">'abcdefghijklmnopqrstuvwxyz'</span></span><br><span class="line">    <span class="comment">// 遍历 25 次, 因为有 25 个可能的偏移值, 同样得出 25 个答案</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; lower.length; i++) &#123;</span><br><span class="line">        <span class="keyword">var</span> source = decode3(code, i)</span><br><span class="line">        log(source)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> __main = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 需要解密的字符串</span></span><br><span class="line">    <span class="keyword">var</span> code = <span class="string">'VRPHWLPHV L ZDQW WR FKDW ZLWK BRX,EXW L KDYH QR UHDVRQ WR FKDW ZLWK BRX'</span></span><br><span class="line">    decode4(code)</span><br><span class="line">&#125;</span><br><span class="line">__main()</span><br></pre></td></tr></table></figure></p>
+<h3 id="肉眼找答案"><a href="#肉眼找答案" class="headerlink" title="肉眼找答案"></a>肉眼找答案</h3><p><img src="http://osaotfxwi.bkt.clouddn.com/img_caesar_decode.png" alt="解密25个答案"></p>
+<p>看到了吧, 比较像是正常语言的那句. 不就是</p>
+<p><strong>sometimes i want to chat with you,but i have no reason to chat with you</strong></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="何宝莹 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>扫一扫关注我的公众号</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/webstorm-idea-pycharm-shortcuts/" rel="next" title="webstorm, idea, pycharm 快捷键@mac">
+                <i class="fa fa-chevron-left"></i> webstorm, idea, pycharm 快捷键@mac
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/atom-shortcut-conflict/" rel="prev" title="怎样解决 atom 快捷键冲突?( markdown-previw 的使用为例)">
+                怎样解决 atom 快捷键冲突?( markdown-previw 的使用为例) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="caesar-cipher/"
+           data-title="一切乱码都是告白? ---如何破解凯撒密码" data-url="http://yoursite.com/caesar-cipher/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://hebaoying.com/uploads/avatar.png"
+               alt="何宝莹" />
+          <p class="site-author-name" itemprop="name">何宝莹</p>
+          <p class="site-description motion-element" itemprop="description">双拼自然码|低流动投资|古典自由主义</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/hebaoying" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/hebaoying" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是凯撒密码"><span class="nav-number">1.</span> <span class="nav-text">什么是凯撒密码?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么要了解凯撒加密"><span class="nav-number">2.</span> <span class="nav-text">为什么要了解凯撒加密?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最简单的凯撒解密方法"><span class="nav-number">3.</span> <span class="nav-text">最简单的凯撒解密方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#说好的秀恩爱-秀单身呢"><span class="nav-number">4.</span> <span class="nav-text">说好的秀恩爱, 秀单身呢?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#肉眼找答案"><span class="nav-number">5.</span> <span class="nav-text">肉眼找答案</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">何宝莹</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"hebaoying"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>
+
+<!-- 背景动画 -->
+<script type="text/javascript" src="/js/src/particle.js"></script>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
