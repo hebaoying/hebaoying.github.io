@@ -365,6 +365,135 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/invert-binary-tree/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="何宝莹">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="http://hebaoying.com/uploads/avatar.png">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="折叠何宝莹">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="折叠何宝莹" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/invert-binary-tree/" itemprop="url">
+                  你会翻转二叉搜索树吗?(JS为例)invert binary tree
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-27T07:15:00+08:00">
+                2018-02-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/invert-binary-tree/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="invert-binary-tree/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>举个简单例子. 上图就是一个二叉搜索树.<br>实现的代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">class Tree &#123;</span><br><span class="line">    constructor(element=null) &#123;</span><br><span class="line">        this.element = element</span><br><span class="line">        this.left = null</span><br><span class="line">        this.right = null</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    traversal() &#123;</span><br><span class="line">        console.log(&apos;element is&apos;, this.element)</span><br><span class="line">        if (this.left !== null) &#123;</span><br><span class="line">            this.left.traversal()</span><br><span class="line">        &#125;</span><br><span class="line">        if (this.right !== null) &#123;</span><br><span class="line">            this.right.traversal()</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const testInvert = () =&gt; &#123;</span><br><span class="line">    const a = new Tree(&apos;a&apos;)</span><br><span class="line">    const b = new Tree(&apos;b&apos;)</span><br><span class="line">    const c = new Tree(&apos;c&apos;)</span><br><span class="line">    const d = new Tree(&apos;d&apos;)</span><br><span class="line">    const e = new Tree(&apos;e&apos;)</span><br><span class="line">    const f = new Tree(&apos;f&apos;)</span><br><span class="line">    const g = new Tree(&apos;g&apos;)</span><br><span class="line"></span><br><span class="line">    a.left = b</span><br><span class="line">    a.right = c</span><br><span class="line">    b.left = d</span><br><span class="line">    b.right = e</span><br><span class="line">    c.left = f</span><br><span class="line">    c.right = g</span><br><span class="line"></span><br><span class="line">    a.traversal()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">if (require.main === module) &#123;</span><br><span class="line">    testInvert()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>翻转后是怎样的呢?</p>
+<p>这个题考量的是递归.</p>
+<p>直接给答案吧.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">const invert = (tree) =&gt; &#123;</span><br><span class="line">    [tree.left, tree.right] = [tree.right, tree.left]</span><br><span class="line">    if (tree.left !== null) &#123;</span><br><span class="line">        invert(tree.left)</span><br><span class="line">    &#125;</span><br><span class="line">    if (tree.right !== null) &#123;</span><br><span class="line">        invert(tree.right)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>挺简单的.</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="http://yoursite.com/hexo-website-building-traps/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -484,135 +613,6 @@
 <p>其中yoursite.com/yourpage.html和文字“回到我的主页”可以自定义，记得改为自己的页面和合适的文字。</p>
 <p>改主题<br>我用的是next主题。<br>在终端窗口下，定位到 Hexo 站点目录下。使用 Git checkout 代码：</p>
 <p>$ cd your-hexo-site<br>$ git clone <a href="https://github.com/iissnan/hexo-them-next" target="_blank" rel="noopener">https://github.com/iissnan/hexo-them-next</a> themes/next<br>做主题那个人有很详尽的教程，而且在github上有问必答，当然问问题前先自己找答案。99%情况下都能找到答案。设置语言、侧栏、头像啥啥的都在主题设置里面有。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/invert-binary-tree/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="何宝莹">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="http://hebaoying.com/uploads/avatar.png">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="折叠何宝莹">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="折叠何宝莹" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/invert-binary-tree/" itemprop="url">
-                  你会翻转二叉搜索树吗?(JS为例)invert binary tree
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-23T07:15:00+08:00">
-                2018-02-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <a href="/invert-binary-tree/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="invert-binary-tree/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>举个简单例子. 上图就是一个二叉搜索树.<br>实现的代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">class Tree &#123;</span><br><span class="line">    constructor(element=null) &#123;</span><br><span class="line">        this.element = element</span><br><span class="line">        this.left = null</span><br><span class="line">        this.right = null</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    traversal() &#123;</span><br><span class="line">        console.log(&apos;element is&apos;, this.element)</span><br><span class="line">        if (this.left !== null) &#123;</span><br><span class="line">            this.left.traversal()</span><br><span class="line">        &#125;</span><br><span class="line">        if (this.right !== null) &#123;</span><br><span class="line">            this.right.traversal()</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const testInvert = () =&gt; &#123;</span><br><span class="line">    const a = new Tree(&apos;a&apos;)</span><br><span class="line">    const b = new Tree(&apos;b&apos;)</span><br><span class="line">    const c = new Tree(&apos;c&apos;)</span><br><span class="line">    const d = new Tree(&apos;d&apos;)</span><br><span class="line">    const e = new Tree(&apos;e&apos;)</span><br><span class="line">    const f = new Tree(&apos;f&apos;)</span><br><span class="line">    const g = new Tree(&apos;g&apos;)</span><br><span class="line"></span><br><span class="line">    a.left = b</span><br><span class="line">    a.right = c</span><br><span class="line">    b.left = d</span><br><span class="line">    b.right = e</span><br><span class="line">    c.left = f</span><br><span class="line">    c.right = g</span><br><span class="line"></span><br><span class="line">    a.traversal()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">if (require.main === module) &#123;</span><br><span class="line">    testInvert()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>翻转后是怎样的呢?</p>
-<p>这个题考量的是递归.</p>
-<p>直接给答案吧.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">const invert = (tree) =&gt; &#123;</span><br><span class="line">    [tree.left, tree.right] = [tree.right, tree.left]</span><br><span class="line">    if (tree.left !== null) &#123;</span><br><span class="line">        invert(tree.left)</span><br><span class="line">    &#125;</span><br><span class="line">    if (tree.right !== null) &#123;</span><br><span class="line">        invert(tree.right)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>挺简单的.</p>
 
           
         
@@ -1198,130 +1198,6 @@ C + k 删除从当前光标到行尾的所有内容, 并且暂存起来, 用C + 
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/low-liquid-investing/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="何宝莹">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="http://hebaoying.com/uploads/avatar.png">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="折叠何宝莹">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="折叠何宝莹" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/low-liquid-investing/" itemprop="url">
-                  低流动投资
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-27T11:24:00+08:00">
-                2017-01-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <a href="/low-liquid-investing/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="low-liquid-investing/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>￼先贴一张图，过去11年中国各类资产的走势。（2005.1～2016.5）<br>[<a href="http://ww2.sinaimg.cn/large/65e4f1e6gw1f80558al6fj20ms0bntbv.jpg]" target="_blank" rel="noopener">http://ww2.sinaimg.cn/large/65e4f1e6gw1f80558al6fj20ms0bntbv.jpg]</a><br>没想到，以中证全指净收益指数为代表的股票是所有大类资产中回报最高的品种，排名第二是一线城市房地产。有人会得出结论：杀入股市。科科，请问看股票的收益曲线，大起大落，如果07年入场，到现在还没赚钱呢。与此相比，全国房地产的曲线一只缓和上升，一线城市房地产的回报让很多人乐开颜。即便有炒股能力，有择时能力，还是建议投资一线城市房地产，只有北上深，才有房地产，记住这句话。为什么呢？05年有股民买股票，但有多少人全仓，又有多少人加杠杆，更进一步，又有多少人一直持有直到07年或者去年15年五月卖出？你并不会，基弧所有股民都不会。但是05年在上海、在北京、在深圳买房的人，大部分会全仓投入，并且加杆杠，更重要的是一直持有。这，是财富的来源。每年5%平稳的涨幅在全仓杆杠放大下，投资一线房产收益非常可观。<br>既然提到低流动，不得不说一下财务上一个很重要的常识：资产的三性——流动性、收益性、安全性。不同的投资资产的三性特征不同，不能面面俱到，不得不放弃其中一个，你会放弃哪个呢？well，必须是流动性。一线城市房产就是这样的资产，无需全额付清，外加30年分期付款，试问买哪样东西有这样的特权呢？</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="http://yoursite.com/English-Morning-Reading-Club-70-days/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1408,6 +1284,130 @@ C + k 删除从当前光标到行尾的所有内容, 并且暂存起来, 用C + 
         
           
             <p>坚持做一件事70天了，养成一个非常好的习惯。刚开始十几天的时候，每天打开电脑，下载微信John读的音频，用iTunes打开，默认单曲循环，插上音响，我的一天缓缓开始。同时会把音频上传到网易云音乐，方便自己和别人收听，之前还有人感谢我、和我聊了蛮久，是个很有学习干劲的小伙伴。后来没多久John自己把音频放到线上，我就无需亲自把音频放在网上。于是，只需按两个键，我的一天就开始了。<br>每天都坚持listen, shadow, read三个步骤，时间多点或者心情好时这个步骤会循环反复♻️最多两三次，花了多少时间，都体现在录音效果上。有遇到过很难的材料呀，反复了四个循环才觉得读懂文章，古人说的话有道理，多读几遍其义自现。如果你看的不清楚是因为你离得不够近，如果你读不懂是因为你读的不够多。再后来我想每天都花时间在这上面，英语水平终于没那么差了，甚至有点回到大学水平，我可以考虑考证了，没想太多，只有三级口译这个选择了。<br>琢磨下，我可以在原来的三步基础上，加上口译interpret这一项，同传还是交传就看自己水平和材料难度了。第二天实行了，因为在路上开车，所以真实的步骤是listen, shadow, interpret, listen, shadow, interpret如此循环的，等坐下来有空时才加入read这一步。本来打算交传的，听一句翻译一句，可是车子的暂停键有延迟，所以翻译的时候没几句就结束了。我纳闷了，材料哪有那么短。后来重新听才知道这个延迟让我跳掉很多句。所以我后来就同传了，听的时候可以现在脑子里翻译一遍，自己再张嘴说。这个过程中自觉嘴巴很笨，至少比脑子笨太多，我就会对自己说：你笨啊，如果一张嘴就出文章了，还干嘛去练习。<br>很大的惊喜是以前读过对我影响很大的文章，John也挑到读出来了。是Steve P.写的怎样在20分钟内找到人生目标，以前读过的奶牛🐄写的中文版，并实际做了两次，效果很好。两次都为同一样而泪流不止。谢谢奶牛、谢谢Steve、谢谢John、谢谢新生大学。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/low-liquid-investing/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="何宝莹">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="http://hebaoying.com/uploads/avatar.png">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="折叠何宝莹">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="折叠何宝莹" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/low-liquid-investing/" itemprop="url">
+                  低流动投资
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-27T11:24:00+08:00">
+                2017-01-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/low-liquid-investing/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="low-liquid-investing/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>￼先贴一张图，过去11年中国各类资产的走势。（2005.1～2016.5）<br>[<a href="http://ww2.sinaimg.cn/large/65e4f1e6gw1f80558al6fj20ms0bntbv.jpg]" target="_blank" rel="noopener">http://ww2.sinaimg.cn/large/65e4f1e6gw1f80558al6fj20ms0bntbv.jpg]</a><br>没想到，以中证全指净收益指数为代表的股票是所有大类资产中回报最高的品种，排名第二是一线城市房地产。有人会得出结论：杀入股市。科科，请问看股票的收益曲线，大起大落，如果07年入场，到现在还没赚钱呢。与此相比，全国房地产的曲线一只缓和上升，一线城市房地产的回报让很多人乐开颜。即便有炒股能力，有择时能力，还是建议投资一线城市房地产，只有北上深，才有房地产，记住这句话。为什么呢？05年有股民买股票，但有多少人全仓，又有多少人加杠杆，更进一步，又有多少人一直持有直到07年或者去年15年五月卖出？你并不会，基弧所有股民都不会。但是05年在上海、在北京、在深圳买房的人，大部分会全仓投入，并且加杆杠，更重要的是一直持有。这，是财富的来源。每年5%平稳的涨幅在全仓杆杠放大下，投资一线房产收益非常可观。<br>既然提到低流动，不得不说一下财务上一个很重要的常识：资产的三性——流动性、收益性、安全性。不同的投资资产的三性特征不同，不能面面俱到，不得不放弃其中一个，你会放弃哪个呢？well，必须是流动性。一线城市房产就是这样的资产，无需全额付清，外加30年分期付款，试问买哪样东西有这样的特权呢？</p>
 
           
         
