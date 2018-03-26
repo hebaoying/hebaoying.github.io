@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="自我发展, 编程, 双拼自然码, 奥地利学派, 前端, 英语翻译" />
+  <meta name="keywords" content="自我发展, 编程, 奥地利学派, 前端, 英语翻译" />
 
 
 
@@ -230,7 +230,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/extract video:audio-address-from-website,transfer-to-short-add/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/Configuring-a-Godaddy-domain-name-with-github-pages/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="何宝莹">
@@ -255,8 +255,8 @@
             
               
                 
-                <a class="post-title-link" href="/extract video:audio-address-from-website,transfer-to-short-add/" itemprop="url">
-                  如何导出视频/视频地址，再转成短地址？
+                <a class="post-title-link" href="/Configuring-a-Godaddy-domain-name-with-github-pages/" itemprop="url">
+                  GoDaddy域名转址到Github Page操作说明
                 </a>
               
             
@@ -270,8 +270,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-01-27T11:24:00+08:00">
-                2015-01-27
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-07-27T11:24:00+08:00">
+                2016-07-27
               </time>
             
 
@@ -286,8 +286,8 @@
             
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
-                <a href="/extract video:audio-address-from-website,transfer-to-short-add/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="extract video:audio-address-from-website,transfer-to-short-add/" itemprop="commentCount"></span>
+                <a href="/Configuring-a-Godaddy-domain-name-with-github-pages/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="Configuring-a-Godaddy-domain-name-with-github-pages/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -315,8 +315,41 @@
       
         
           
-            <p>昨夜邴雪大人叫我帮忙导出视频地址，眼拙看成导出视频，急忙用火狐浏览器的插件Video DownloadHelper导出视频.<br>幸好之前为了导出微信公众号文章的mp3下载了这个插件，现在派上大用场了。well，后来邴雪说要的是地址，又急忙用同一个插件看到复制视频地址的选项，复制粘贴给她。“那么长的地址呀，”她说，忙不迭，寻找短地址的转换工具，知乎有很多回答，外国其实有很靠谱的，不过需要翻墙，总不能给一个需要翻墙的短地址吧。国内的新浪和百度都提供此类服务，可是新浪说不给转，因为我的地址不合规，无奈，继续寻找。知乎和百度都有答案，最后我使用了QQ签名，为啥使用qq签名呢，因为历史签名都会显示在QQ说说上面，而长地址会以短地址形式显示。</p>
-<p>总结：<br>导出或下载视频／音频地址：使用Video DownloadHelper火狐插件,导出不同形式，满足各种需求。<br>长地址转为短地址：腾讯微博，发一条微博，靠谱地把长地址转换为短地址。</p>
+            <p>一直都是通过<a href="https://godaddy.com" target="_blank" rel="noopener">GoDaddy.com</a>购买域名，同时github提供了非常方便免费的空间。github page建好了，个人域名也购买了。怎样让github page转到个人域名呢？以下我会说明怎样让<a href="https://godaddy.com" target="_blank" rel="noopener">GoDaddy.com</a>购买的域名<a href="https://hebaoying.com" target="_blank" rel="noopener">hebaoying.com</a>自动转到github页面<a href="https://hebaoying.github.io" target="_blank" rel="noopener">hebaoying.github.io</a></p>
+<p>operation步骤如下：</p>
+<ol>
+<li>建立Github Page，在GoDaddy购买域名</li>
+<li>在repo底下添加名称为CNAME的文件，内容只有一行：<code>hebaoying.com</code></li>
+<li>在GoDaddy网站管理域名，管理DNS</li>
+<li>删除所有类型为A的记录，添加类型为”A (Host)”   ，”主机” 为 <code>@</code> ， “指向” = <code>192.30.252.153</code> 和”指向” = <code>192.30.252.154</code> 的记录</li>
+<li>添加类型为”CNAME”   ，”主机” 为 <code>www</code>， “指向” = <code>hebaoying.github.io</code> 的记录</li>
+<li>等待DNS生效，转址生效，最长48小时</li>
+</ol>
+<p>以下为详细步骤说明。</p>
+<h2 id="1-建立github的个人网站yourname-github-io"><a href="#1-建立github的个人网站yourname-github-io" class="headerlink" title="1.建立github的个人网站yourname.github.io"></a>1.建立github的个人网站<code>yourname.github.io</code></h2><p>猜你早已经做好这步了，网站建好。网址还是yourname.github.io，并不会自动转向任何地方（这不是废话么）。然后在<a href="https://godaddy.com" target="_blank" rel="noopener">GoDaddy.com</a>上购买域名。</p>
+<h2 id="2-在repo底下添加名称为CNAME的文件"><a href="#2-在repo底下添加名称为CNAME的文件" class="headerlink" title="2.在repo底下添加名称为CNAME的文件"></a>2.在repo底下添加名称为CNAME的文件</h2><p>在repo底下添加名称为CNAME的文件，不带任何后缀，内容只有一行：<code>hebaoying.com</code></p>
+<p>后来发现这个方法是有问题的。当你在本地修改或者上传文章时，即<code>hexo deploy</code>后，发现域名无法转到Github Page了，进入github repo看到<code>CNAME</code>文件被删掉了。以下才是正确解答：在<code>source</code>文件夹新建<code>CNAME</code>文件。</p>
+<p>官方的教程说在根目录新建<code>CNAME</code>文件，这是不对的，因为只有<code>source</code>文件夹的资料被部署到github上，而根目录的内容会被重新写入，即<code>CNAME</code>仍被删掉。</p>
+<p>有两个方法。</p>
+<ul>
+<li>1) atom<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">atom. <span class="built_in">cd</span> ~/Public/hebaoying.github.io</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>打开本地文件夹，在/source文件夹下新建文件（右击点击source文件夹，点击new file即可），文件命名为CNAME，内容只有一行：<br>hebaoying.com<br>最后hero deploy部署到github上就可以了。</p>
+<ul>
+<li>）terminal<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/Public/hebaoying.github.io/souce/</span><br><span class="line"><span class="built_in">echo</span> hebaoying.com &gt; CNAME</span><br><span class="line">git add CNAME</span><br><span class="line">git commit -m “CNAME file or domain<span class="string">"</span></span><br><span class="line"><span class="string">cd ~/Public/hebaoying.github.io/</span></span><br><span class="line"><span class="string">hexo generate</span></span><br><span class="line"><span class="string">hexo clean</span></span><br><span class="line"><span class="string">hexo deploy</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="3-在GoDaddy网站管理域名，点击管理DNS"><a href="#3-在GoDaddy网站管理域名，点击管理DNS" class="headerlink" title="3.在GoDaddy网站管理域名，点击管理DNS"></a>3.在<a href="https://godaddy.com" target="_blank" rel="noopener">GoDaddy</a>网站管理域名，点击管理DNS</h2><p>很简单，选中你要管理的域名，点击进入“管理DNS”。</p>
+<h2 id="4-删除和添加DNS记录"><a href="#4-删除和添加DNS记录" class="headerlink" title="4.删除和添加DNS记录"></a>4.删除和添加DNS记录</h2><p>删除所有类型为A的记录。<br>添加两条记录。</p>
+<ul>
+<li><p>1) 类型为”A (Host)”   ，”主机” 为 <code>@</code> ， “指向” = <code>192.30.252.153</code></p>
+</li>
+<li><p>2) 类型为”A (Host)”   ，”主机” 为 <code>@</code> ， “指向” = <code>192.30.252.154</code></p>
+</li>
+</ul>
+<p>参考<a href="https://help.github.com/articles/tips-for-configuring-an-a-record-with-your-dns-provider/" target="_blank" rel="noopener">github官方帮助文章</a>。</p>
+<h2 id="5-等待DNS生效，最长48小时"><a href="#5-等待DNS生效，最长48小时" class="headerlink" title="5.等待DNS生效，最长48小时"></a>5.等待DNS生效，最长48小时</h2><p>等DNS更新后，输入购买的域名<a href="https://hebaoying.com" target="_blank" rel="noopener">hebaoying.com</a>，看到已经自动转向到<a href="https:hebaoying.github.io" target="_blank" rel="noopener">hebaoying.github.io</a>，但是显示的网址还是<a href="https://hebaoying.com" target="_blank" rel="noopener">hebaoying.com</a><br>OK，完美完成。<br>你可以在terminal输入以下指令，和我的结果对比一下。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/Public/hebaoying.github.io/souce/$ dig hebaoying.com +nostats +nocomments +nocmd</span><br><span class="line"></span><br><span class="line">- ; &lt;&lt;&gt;&gt; DiG 9.8.3-P1 &lt;&lt;&gt;&gt; hebaoying.com +nostats +nocomments +nocmd</span><br><span class="line">;; global options: +cmd</span><br><span class="line">;hebaoying.com.             IN      A</span><br><span class="line">hebaoying.com.      3600    IN      A       192.30.252.154</span><br><span class="line">hebaoying.com.      3600    IN      A       192.30.252.153</span><br></pre></td></tr></table></figure></p>
 
           
         
@@ -442,6 +475,131 @@
           
             <p>帮助我快速进入 OmniFocus 的无干扰的阅读界面，也就设计一个快捷键按下去之后相当于帮我按了三个菜单键，如图：<br>Hide Sidebar<br>Hide Inspector<br>Hide Toolbar</p>
 <p>本来想录屏实现这个功能，但是他竟然录制我在哪个角度点击，完全行不通<br>留意到这些隐藏都有对应的快捷键，没法直接录入功能，我总能让电脑自己输入快捷键吧。<br>第一步，让电脑激活OF<br>第二步和第三步都是输入Hide Sidebar和Hide Inspector的快捷键。<br>第三步，哟，Hide Toolbar软件没有给快捷键呢。自创一个，在系统设置的键盘的快捷键下，设置Hide Toolbar的快捷键。<br>OK，试一下。别忘了点击激活，这个动作才能启用。果然work。那么问题来了，有时候要清爽，有时候要进入编辑状态。咋破，仍是进入系统设置的键盘的快捷键，设置Show Toolbar和Hide Toolbar一样的快捷键。<br>完成，撒花。编辑界面、清爽页面自由转换。<br>意外的收获是，关闭OF的情况下，按全局快捷键还能够即时启动OF。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/extract video:audio-address-from-website,transfer-to-short-add/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="何宝莹">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="http://hebaoying.com/uploads/avatar.png">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="折叠何宝莹">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="折叠何宝莹" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/extract video:audio-address-from-website,transfer-to-short-add/" itemprop="url">
+                  如何导出视频/视频地址，再转成短地址？
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-01-27T11:24:00+08:00">
+                2015-01-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/extract video:audio-address-from-website,transfer-to-short-add/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="extract video:audio-address-from-website,transfer-to-short-add/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>昨夜邴雪大人叫我帮忙导出视频地址，眼拙看成导出视频，急忙用火狐浏览器的插件Video DownloadHelper导出视频.<br>幸好之前为了导出微信公众号文章的mp3下载了这个插件，现在派上大用场了。well，后来邴雪说要的是地址，又急忙用同一个插件看到复制视频地址的选项，复制粘贴给她。“那么长的地址呀，”她说，忙不迭，寻找短地址的转换工具，知乎有很多回答，外国其实有很靠谱的，不过需要翻墙，总不能给一个需要翻墙的短地址吧。国内的新浪和百度都提供此类服务，可是新浪说不给转，因为我的地址不合规，无奈，继续寻找。知乎和百度都有答案，最后我使用了QQ签名，为啥使用qq签名呢，因为历史签名都会显示在QQ说说上面，而长地址会以短地址形式显示。</p>
+<p>总结：<br>导出或下载视频／音频地址：使用Video DownloadHelper火狐插件,导出不同形式，满足各种需求。<br>长地址转为短地址：腾讯微博，发一条微博，靠谱地把长地址转换为短地址。</p>
 
           
         
@@ -773,7 +931,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">14</span>
+              <span class="site-state-item-count">15</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
