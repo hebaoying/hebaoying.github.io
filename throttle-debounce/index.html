@@ -84,17 +84,17 @@
 
 
 
-<meta name="description" content="近期面试遇到了这道题：12345678910//评测题目: throttle的简单实现// throttle的简单实现function throttle(func, duration) &amp;#123;  // 在这里编写具体实现  &amp;#125;window.addEventListener(&apos;scroll&apos;, throttle(func, 50), false); 我:第一反应是没听过这个，然后立刻">
+<meta name="description" content="近期面试遇到了这道题：12345678910//评测题目: throttle的简单实现// throttle的简单实现function throttle(func, duration) &amp;#123;  // 在这里编写具体实现  &amp;#125;window.addEventListener(&apos;scroll&apos;, throttle(func, 50), false);">
 <meta property="og:type" content="article">
 <meta property="og:title" content="throttle 和 debounce 的原理和实现">
 <meta property="og:url" content="http://yoursite.com/throttle-debounce/index.html">
 <meta property="og:site_name" content="折叠何宝莹">
-<meta property="og:description" content="近期面试遇到了这道题：12345678910//评测题目: throttle的简单实现// throttle的简单实现function throttle(func, duration) &amp;#123;  // 在这里编写具体实现  &amp;#125;window.addEventListener(&apos;scroll&apos;, throttle(func, 50), false); 我:第一反应是没听过这个，然后立刻">
+<meta property="og:description" content="近期面试遇到了这道题：12345678910//评测题目: throttle的简单实现// throttle的简单实现function throttle(func, duration) &amp;#123;  // 在这里编写具体实现  &amp;#125;window.addEventListener(&apos;scroll&apos;, throttle(func, 50), false);">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-28T09:05:25.302Z">
+<meta property="og:updated_time" content="2018-10-09T09:37:24.303Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="throttle 和 debounce 的原理和实现">
-<meta name="twitter:description" content="近期面试遇到了这道题：12345678910//评测题目: throttle的简单实现// throttle的简单实现function throttle(func, duration) &amp;#123;  // 在这里编写具体实现  &amp;#125;window.addEventListener(&apos;scroll&apos;, throttle(func, 50), false); 我:第一反应是没听过这个，然后立刻">
+<meta name="twitter:description" content="近期面试遇到了这道题：12345678910//评测题目: throttle的简单实现// throttle的简单实现function throttle(func, duration) &amp;#123;  // 在这里编写具体实现  &amp;#125;window.addEventListener(&apos;scroll&apos;, throttle(func, 50), false);">
 
 
 
@@ -187,6 +187,16 @@
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
           </a>
         </li>
       
@@ -310,6 +320,7 @@
 
       
         <p>近期面试遇到了这道题：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//评测题目: throttle的简单实现</span></span><br><span class="line"><span class="comment">// throttle的简单实现</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">throttle</span>(<span class="params">func, duration</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 在这里编写具体实现</span></span><br><span class="line">  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'scroll'</span>, throttle(func, <span class="number">50</span>), <span class="literal">false</span>);</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a> 
 <p>我:<br>第一反应是没听过这个，然后立刻网上搜相关信息，想起高程有讲过相关内容，立刻拿出红宝书出来镇场子。</p>
 <h3 id="throttle-和-debounce-的原理"><a href="#throttle-和-debounce-的原理" class="headerlink" title="throttle 和 debounce 的原理"></a>throttle 和 debounce 的原理</h3><p>先讲讲 throttle 的来源，俗称节流，一般用在滚动场景里，控制时间响应的次数。</p>
 <blockquote>
@@ -321,7 +332,7 @@
 <blockquote>
 <p>高程的代码实现了 debounce，一开始网上找的答案才是实现 throttle 的。</p>
 </blockquote>
-<p>网上有个人讲的例子很好理解：</p>
+<p>之前看过别人讲的例子很好理解：</p>
 <blockquote>
 <p>电梯超时<br>想象每天上班大厦底下的电梯。把电梯完成一次运送，类比为一次函数的执行和响应。假设电梯有两种运行策略 throttle 和 debounce ，超时设定为15秒，不考虑容量限制。<br>throttle 策略的电梯。保证如果电梯第一个人进来后，15秒后准时运送一次，不等待。如果没有人，则待机。<br>debounce 策略的电梯。如果电梯里有人进来，等待15秒。如果又人进来，15秒等待重新计时，直到15秒超时，开始运送。</p>
 </blockquote>
@@ -437,12 +448,12 @@
                src="http://hebaoying.com/uploads/avatar.png"
                alt="何宝莹" />
           <p class="site-author-name" itemprop="name">何宝莹</p>
-          <p class="site-description motion-element" itemprop="description">前端工程师|低流动投资|古典自由主义</p>
+          <p class="site-description motion-element" itemprop="description">前端工程师|古典自由主义</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-count">21</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

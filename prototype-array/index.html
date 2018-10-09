@@ -84,17 +84,17 @@
 
 
 
-<meta name="description" content="// 实现一个可观察的数组类（ObArray），可以监听push、unshift操作，但其余函数保持与原生Array一致// 其余方法，如pop、shift、indexOf等等无改动这是我的写法1234567891011121314class ObArray extends Array&amp;#123;    constructor(...args) &amp;#123;        super(...arg">
+<meta name="description" content="实现一个可观察的数组类（ObArray），可以监听push、unshift操作，但其余函数保持与原生Array一致其余方法，如pop、shift、indexOf等等无改动">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript 监听数组变化 | 手写数组类">
 <meta property="og:url" content="http://yoursite.com/prototype-array/index.html">
 <meta property="og:site_name" content="折叠何宝莹">
-<meta property="og:description" content="// 实现一个可观察的数组类（ObArray），可以监听push、unshift操作，但其余函数保持与原生Array一致// 其余方法，如pop、shift、indexOf等等无改动这是我的写法1234567891011121314class ObArray extends Array&amp;#123;    constructor(...args) &amp;#123;        super(...arg">
+<meta property="og:description" content="实现一个可观察的数组类（ObArray），可以监听push、unshift操作，但其余函数保持与原生Array一致其余方法，如pop、shift、indexOf等等无改动">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-30T08:05:34.486Z">
+<meta property="og:updated_time" content="2018-10-09T11:55:03.493Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript 监听数组变化 | 手写数组类">
-<meta name="twitter:description" content="// 实现一个可观察的数组类（ObArray），可以监听push、unshift操作，但其余函数保持与原生Array一致// 其余方法，如pop、shift、indexOf等等无改动这是我的写法1234567891011121314class ObArray extends Array&amp;#123;    constructor(...args) &amp;#123;        super(...arg">
+<meta name="twitter:description" content="实现一个可观察的数组类（ObArray），可以监听push、unshift操作，但其余函数保持与原生Array一致其余方法，如pop、shift、indexOf等等无改动">
 
 
 
@@ -187,6 +187,16 @@
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
           </a>
         </li>
       
@@ -309,12 +319,15 @@
       
 
       
-        <p>// 实现一个可观察的数组类（ObArray），可以监听push、unshift操作，但其余函数保持与原生Array一致<br>// 其余方法，如pop、shift、indexOf等等无改动<br>这是我的写法<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ObArray</span> <span class="keyword">extends</span> <span class="title">Array</span></span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(...args) &#123;</span><br><span class="line">        <span class="keyword">super</span>(...args)</span><br><span class="line">    &#125;</span><br><span class="line">    push(...args)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'push '</span>+ args)</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">super</span>.push(...args);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    unshift (...args) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'unshift '</span>+ args)</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">super</span>.unshift(...args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <blockquote>
+<p>实现一个可观察的数组类（ObArray），可以监听push、unshift操作，但其余函数保持与原生Array一致<br>其余方法，如pop、shift、indexOf等等无改动<br><a id="more"></a><br>这是我的写法<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ObArray</span> <span class="keyword">extends</span> <span class="title">Array</span></span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(...args) &#123;</span><br><span class="line">        <span class="keyword">super</span>(...args)</span><br><span class="line">    &#125;</span><br><span class="line">    push(...args)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'push '</span>+ args)</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">super</span>.push(...args);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    unshift (...args) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'unshift '</span>+ args)</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">super</span>.unshift(...args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
 <p>面试官：</p>
 <blockquote>
 <p>那个数组类的问题是我最近刚想的，还有不少纰漏。。。没写出我期望的考点~所以就。。。不评论了</p>
 </blockquote>
-<p>那就是不能使用继承，而是自己包装一个数组类<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arrayProto = <span class="built_in">Array</span>.prototype;</span><br><span class="line"><span class="keyword">const</span> arrayMethods = <span class="built_in">Object</span>.create(arrayProto);</span><br><span class="line"><span class="keyword">const</span> newArrProto = [];</span><br><span class="line">[</span><br><span class="line">    <span class="string">'push'</span>,</span><br><span class="line">    <span class="string">'unshift'</span>,</span><br><span class="line">].forEach(<span class="function"><span class="params">method</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 原生Array的原型方法</span></span><br><span class="line">    <span class="keyword">let</span> original = arrayMethods[method];</span><br><span class="line"></span><br><span class="line">    newArrProto[method] = <span class="function"><span class="keyword">function</span> <span class="title">mutator</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(method, e);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 调用对应的原生方法并返回结果（新数组长度）</span></span><br><span class="line">        <span class="keyword">return</span> original.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">let</span> arr = [];</span><br><span class="line">arr.__proto__ = newArrProto;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">arr.push(<span class="string">'foo'</span>) <span class="comment">// =&gt; 打印：'push foo'</span></span><br><span class="line">arr.unshift(<span class="string">'bar'</span>) <span class="comment">// =&gt; 打印：'unshift bar'</span></span><br><span class="line">arr.pop() <span class="comment">// =&gt; 无打印</span></span><br><span class="line">arr.shift() <span class="comment">// =&gt; 无打印</span></span><br></pre></td></tr></table></figure></p>
+<p>那就是不能使用继承，而是自己包装一个数组类，后来重新翻了高程，写了一下。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> log = <span class="built_in">console</span>.log.bind(<span class="built_in">console</span>)</span><br><span class="line"><span class="keyword">var</span> observifyArray = <span class="function"><span class="keyword">function</span> (<span class="params">array</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> aryMethods = [<span class="string">'push'</span>, <span class="string">'unshift'</span>]</span><br><span class="line">  <span class="keyword">var</span> arrayAugmentations = <span class="built_in">Object</span>.create(<span class="built_in">Array</span>.prototype)</span><br><span class="line">  </span><br><span class="line">  aryMethods.forEach(<span class="function">(<span class="params">method</span>)=&gt;</span> &#123;</span><br><span class="line">  </span><br><span class="line">      <span class="keyword">let</span> original = <span class="built_in">Array</span>.prototype[method]</span><br><span class="line">      arrayAugmentations[method] = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">          log(method, ...arguments)</span><br><span class="line">          <span class="keyword">return</span> original.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>)</span><br><span class="line">      &#125;;</span><br><span class="line">  &#125;);</span><br><span class="line">  array.__proto__ = arrayAugmentations</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> ObArray = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    log(<span class="keyword">this</span>, ...arguments)</span><br><span class="line">    <span class="keyword">var</span> a = <span class="built_in">Array</span>.apply(<span class="keyword">this</span>,<span class="built_in">arguments</span>)</span><br><span class="line">    observifyArray(a)</span><br><span class="line">    <span class="keyword">return</span> a</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**验证 */</span></span><br><span class="line"><span class="comment">// console.log(JSON.stringify(array))</span></span><br><span class="line"><span class="keyword">var</span> oba = <span class="keyword">new</span> ObArray(<span class="string">"a"</span>,<span class="number">1</span>,<span class="number">3</span>);</span><br><span class="line">oba.push(<span class="string">"111"</span>)</span><br><span class="line">log(<span class="built_in">JSON</span>.stringify(oba))</span><br><span class="line"><span class="comment">// log(oba.pop())</span></span><br><span class="line"><span class="comment">// log(JSON.stringify(oba))</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -416,12 +429,12 @@
                src="http://hebaoying.com/uploads/avatar.png"
                alt="何宝莹" />
           <p class="site-author-name" itemprop="name">何宝莹</p>
-          <p class="site-description motion-element" itemprop="description">前端工程师|低流动投资|古典自由主义</p>
+          <p class="site-description motion-element" itemprop="description">前端工程师|古典自由主义</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-count">21</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

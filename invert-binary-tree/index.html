@@ -84,17 +84,17 @@
 
 
 
-<meta name="description" content="举个简单例子. 上图就是一个二叉搜索树.实现的代码:12345678910111213141516171819202122232425262728293031323334353637383940class Tree &amp;#123;    constructor(element=null) &amp;#123;        this.element = element        this.left =">
+<meta name="description" content="举个简单例子. 上图就是一个二叉搜索树.实现的代码:">
 <meta property="og:type" content="article">
 <meta property="og:title" content="你会翻转二叉搜索树吗?(JS为例)invert binary tree">
 <meta property="og:url" content="http://yoursite.com/invert-binary-tree/index.html">
 <meta property="og:site_name" content="折叠何宝莹">
-<meta property="og:description" content="举个简单例子. 上图就是一个二叉搜索树.实现的代码:12345678910111213141516171819202122232425262728293031323334353637383940class Tree &amp;#123;    constructor(element=null) &amp;#123;        this.element = element        this.left =">
+<meta property="og:description" content="举个简单例子. 上图就是一个二叉搜索树.实现的代码:">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-07T09:19:27.966Z">
+<meta property="og:updated_time" content="2018-10-09T09:37:24.297Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="你会翻转二叉搜索树吗?(JS为例)invert binary tree">
-<meta name="twitter:description" content="举个简单例子. 上图就是一个二叉搜索树.实现的代码:12345678910111213141516171819202122232425262728293031323334353637383940class Tree &amp;#123;    constructor(element=null) &amp;#123;        this.element = element        this.left =">
+<meta name="twitter:description" content="举个简单例子. 上图就是一个二叉搜索树.实现的代码:">
 
 
 
@@ -187,6 +187,16 @@
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
           </a>
         </li>
       
@@ -309,7 +319,7 @@
       
 
       
-        <p>举个简单例子. 上图就是一个二叉搜索树.<br>实现的代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">class Tree &#123;</span><br><span class="line">    constructor(element=null) &#123;</span><br><span class="line">        this.element = element</span><br><span class="line">        this.left = null</span><br><span class="line">        this.right = null</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    traversal() &#123;</span><br><span class="line">        console.log(&apos;element is&apos;, this.element)</span><br><span class="line">        if (this.left !== null) &#123;</span><br><span class="line">            this.left.traversal()</span><br><span class="line">        &#125;</span><br><span class="line">        if (this.right !== null) &#123;</span><br><span class="line">            this.right.traversal()</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const testInvert = () =&gt; &#123;</span><br><span class="line">    const a = new Tree(&apos;a&apos;)</span><br><span class="line">    const b = new Tree(&apos;b&apos;)</span><br><span class="line">    const c = new Tree(&apos;c&apos;)</span><br><span class="line">    const d = new Tree(&apos;d&apos;)</span><br><span class="line">    const e = new Tree(&apos;e&apos;)</span><br><span class="line">    const f = new Tree(&apos;f&apos;)</span><br><span class="line">    const g = new Tree(&apos;g&apos;)</span><br><span class="line"></span><br><span class="line">    a.left = b</span><br><span class="line">    a.right = c</span><br><span class="line">    b.left = d</span><br><span class="line">    b.right = e</span><br><span class="line">    c.left = f</span><br><span class="line">    c.right = g</span><br><span class="line"></span><br><span class="line">    a.traversal()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">if (require.main === module) &#123;</span><br><span class="line">    testInvert()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <p>举个简单例子. 上图就是一个二叉搜索树.<br>实现的代码:<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">class Tree &#123;</span><br><span class="line">    constructor(element=null) &#123;</span><br><span class="line">        this.element = element</span><br><span class="line">        this.left = null</span><br><span class="line">        this.right = null</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    traversal() &#123;</span><br><span class="line">        console.log(&apos;element is&apos;, this.element)</span><br><span class="line">        if (this.left !== null) &#123;</span><br><span class="line">            this.left.traversal()</span><br><span class="line">        &#125;</span><br><span class="line">        if (this.right !== null) &#123;</span><br><span class="line">            this.right.traversal()</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const testInvert = () =&gt; &#123;</span><br><span class="line">    const a = new Tree(&apos;a&apos;)</span><br><span class="line">    const b = new Tree(&apos;b&apos;)</span><br><span class="line">    const c = new Tree(&apos;c&apos;)</span><br><span class="line">    const d = new Tree(&apos;d&apos;)</span><br><span class="line">    const e = new Tree(&apos;e&apos;)</span><br><span class="line">    const f = new Tree(&apos;f&apos;)</span><br><span class="line">    const g = new Tree(&apos;g&apos;)</span><br><span class="line"></span><br><span class="line">    a.left = b</span><br><span class="line">    a.right = c</span><br><span class="line">    b.left = d</span><br><span class="line">    b.right = e</span><br><span class="line">    c.left = f</span><br><span class="line">    c.right = g</span><br><span class="line"></span><br><span class="line">    a.traversal()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">if (require.main === module) &#123;</span><br><span class="line">    testInvert()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>翻转后是怎样的呢?</p>
 <p>这个题考量的是递归.</p>
 <p>直接给答案吧.</p>
@@ -346,8 +356,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/hexo-website-building-traps/" rel="next" title="Hexo + GitHub Page建个人网站完整攻略（技术小白专用）">
-                <i class="fa fa-chevron-left"></i> Hexo + GitHub Page建个人网站完整攻略（技术小白专用）
+              <a href="/keyboard-name-icon/" rel="next" title="键盘按键的英文中文和符号换算记录">
+                <i class="fa fa-chevron-left"></i> 键盘按键的英文中文和符号换算记录
               </a>
             
           </div>
@@ -416,12 +426,12 @@
                src="http://hebaoying.com/uploads/avatar.png"
                alt="何宝莹" />
           <p class="site-author-name" itemprop="name">何宝莹</p>
-          <p class="site-description motion-element" itemprop="description">前端工程师|低流动投资|古典自由主义</p>
+          <p class="site-description motion-element" itemprop="description">前端工程师|古典自由主义</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-count">21</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
