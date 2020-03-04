@@ -84,17 +84,17 @@
 
 
 
-<meta name="description" content="近期面试遇到了这道题：12345678910//评测题目: throttle的简单实现// throttle的简单实现function throttle(func, duration) &amp;#123;  // 在这里编写具体实现  &amp;#125;window.addEventListener(&apos;scroll&apos;, throttle(func, 50), false);">
+<meta name="description" content="近期面试遇到了这道题：12345678910//评测题目: throttle的简单实现// throttle的简单实现function throttle(func, duration) &amp;#123;  // 在这里编写具体实现  &amp;#125;window.addEventListener(&apos;scroll&apos;, throttle(func, 50), false); 我:第一反应是没听过这个，然后立刻">
 <meta property="og:type" content="article">
 <meta property="og:title" content="throttle 和 debounce 的原理和实现">
 <meta property="og:url" content="http://yoursite.com/throttle-debounce/index.html">
 <meta property="og:site_name" content="折叠何宝莹">
-<meta property="og:description" content="近期面试遇到了这道题：12345678910//评测题目: throttle的简单实现// throttle的简单实现function throttle(func, duration) &amp;#123;  // 在这里编写具体实现  &amp;#125;window.addEventListener(&apos;scroll&apos;, throttle(func, 50), false);">
+<meta property="og:description" content="近期面试遇到了这道题：12345678910//评测题目: throttle的简单实现// throttle的简单实现function throttle(func, duration) &amp;#123;  // 在这里编写具体实现  &amp;#125;window.addEventListener(&apos;scroll&apos;, throttle(func, 50), false); 我:第一反应是没听过这个，然后立刻">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-09T09:37:24.000Z">
+<meta property="og:updated_time" content="2020-03-04T08:02:55.719Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="throttle 和 debounce 的原理和实现">
-<meta name="twitter:description" content="近期面试遇到了这道题：12345678910//评测题目: throttle的简单实现// throttle的简单实现function throttle(func, duration) &amp;#123;  // 在这里编写具体实现  &amp;#125;window.addEventListener(&apos;scroll&apos;, throttle(func, 50), false);">
+<meta name="twitter:description" content="近期面试遇到了这道题：12345678910//评测题目: throttle的简单实现// throttle的简单实现function throttle(func, duration) &amp;#123;  // 在这里编写具体实现  &amp;#125;window.addEventListener(&apos;scroll&apos;, throttle(func, 50), false); 我:第一反应是没听过这个，然后立刻">
 
 
 
@@ -320,13 +320,12 @@
 
       
         <p>近期面试遇到了这道题：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//评测题目: throttle的简单实现</span></span><br><span class="line"><span class="comment">// throttle的简单实现</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">throttle</span>(<span class="params">func, duration</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 在这里编写具体实现</span></span><br><span class="line">  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'scroll'</span>, throttle(func, <span class="number">50</span>), <span class="literal">false</span>);</span><br></pre></td></tr></table></figure></p>
-<a id="more"></a> 
 <p>我:<br>第一反应是没听过这个，然后立刻网上搜相关信息，想起高程有讲过相关内容，立刻拿出红宝书出来镇场子。</p>
 <h3 id="throttle-和-debounce-的原理"><a href="#throttle-和-debounce-的原理" class="headerlink" title="throttle 和 debounce 的原理"></a>throttle 和 debounce 的原理</h3><p>先讲讲 throttle 的来源，俗称节流，一般用在滚动场景里，控制时间响应的次数。</p>
 <blockquote>
 <p>高程里面讲函数节流背后的基本思想是指，某些代码不可以在没有间断的情况连续重复执行。第一次调用函数，创建一个定时器，在指定的时间间隔之后运行代码。当第二次调用该函数时，它会清除前一次的定时器并设置另一个。如果前一个定时器已经执行过了，这个操作就没有任何意义。目的是只有在执行函数的请求停止了一段时间之后才执行。</p>
 </blockquote>
-<p>其实高程里面讲的节流原理是 debounce，实际的代码也是 debounce 的实现代码</p>
+<p>其实高程里面讲的节流原理是 debounce，实际的代码也是 debounce 的实现代码<br><a id="more"></a> </p>
 <p>这是高程的代码<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">throttle</span> (<span class="params">method, context, duration</span>) </span>&#123;</span><br><span class="line">    clearTimeout(method.tId)</span><br><span class="line">    method.tId = setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        method.call(context)</span><br><span class="line">    &#125;, duration)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>面试官：</p>
 <blockquote>
@@ -345,11 +344,6 @@
     <div>
       
         
-<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
-    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="何宝莹 wechat" style="width: 200px; max-width: 100%;"/>
-    <div>扫一扫关注我的公众号</div>
-</div>
-
 
       
     </div>
@@ -448,12 +442,12 @@
                src="http://hebaoying.com/uploads/avatar.png"
                alt="何宝莹" />
           <p class="site-author-name" itemprop="name">何宝莹</p>
-          <p class="site-description motion-element" itemprop="description">前端工程师|古典自由主义</p>
+          <p class="site-description motion-element" itemprop="description">攀高峰</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">22</span>
+              <span class="site-state-item-count">25</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

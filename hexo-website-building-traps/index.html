@@ -84,17 +84,17 @@
 
 
 
-<meta name="description" content="买域名Godaddy或者万网，需要备案的请考虑后者，喜欢说话碰种边界的请考虑前者，我都买过，都不错，看需要。一般不考虑国内生意的话跟Godaddy买，针对国内市场的果断万网购买域名。注册然后付费这个不教了。">
+<meta name="description" content="买域名Godaddy或者万网，需要备案的请考虑后者，喜欢说话碰种边界的请考虑前者，我都买过，都不错，看需要。一般不考虑国内生意的话跟Godaddy买，针对国内市场的果断万网购买域名。注册然后付费这个不教了。 解析域名DNS解析选择DNSPod，这样整个网站访问就ok了，具体参考Godaddy注册商域名修改DNS地址。Q：我不懂为啥要解析，感觉登陆速度差不多呀，好像快了一丢丢，那丢会不会是心理作用。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo + GitHub Page建个人网站完整攻略（技术小白专用）">
 <meta property="og:url" content="http://yoursite.com/hexo-website-building-traps/index.html">
 <meta property="og:site_name" content="折叠何宝莹">
-<meta property="og:description" content="买域名Godaddy或者万网，需要备案的请考虑后者，喜欢说话碰种边界的请考虑前者，我都买过，都不错，看需要。一般不考虑国内生意的话跟Godaddy买，针对国内市场的果断万网购买域名。注册然后付费这个不教了。">
+<meta property="og:description" content="买域名Godaddy或者万网，需要备案的请考虑后者，喜欢说话碰种边界的请考虑前者，我都买过，都不错，看需要。一般不考虑国内生意的话跟Godaddy买，针对国内市场的果断万网购买域名。注册然后付费这个不教了。 解析域名DNS解析选择DNSPod，这样整个网站访问就ok了，具体参考Godaddy注册商域名修改DNS地址。Q：我不懂为啥要解析，感觉登陆速度差不多呀，好像快了一丢丢，那丢会不会是心理作用。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-23T03:55:50.000Z">
+<meta property="og:updated_time" content="2020-03-04T08:01:11.736Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo + GitHub Page建个人网站完整攻略（技术小白专用）">
-<meta name="twitter:description" content="买域名Godaddy或者万网，需要备案的请考虑后者，喜欢说话碰种边界的请考虑前者，我都买过，都不错，看需要。一般不考虑国内生意的话跟Godaddy买，针对国内市场的果断万网购买域名。注册然后付费这个不教了。">
+<meta name="twitter:description" content="买域名Godaddy或者万网，需要备案的请考虑后者，喜欢说话碰种边界的请考虑前者，我都买过，都不错，看需要。一般不考虑国内生意的话跟Godaddy买，针对国内市场的果断万网购买域名。注册然后付费这个不教了。 解析域名DNS解析选择DNSPod，这样整个网站访问就ok了，具体参考Godaddy注册商域名修改DNS地址。Q：我不懂为啥要解析，感觉登陆速度差不多呀，好像快了一丢丢，那丢会不会是心理作用。">
 
 
 
@@ -319,18 +319,19 @@
       
 
       
-        <h3 id="买域名"><a href="#买域名" class="headerlink" title="买域名"></a>买域名</h3><p>Godaddy或者万网，需要备案的请考虑后者，喜欢说话碰种边界的请考虑前者，我都买过，都不错，看需要。一般不考虑国内生意的话跟Godaddy买，针对国内市场的果断万网购买域名。注册然后付费这个不教了。<br><a id="more"></a><br>解析域名<br>DNS解析选择DNSPod，这样整个网站访问就ok了，具体参考Godaddy注册商域名修改DNS地址。<br>Q：我不懂为啥要解析，感觉登陆速度差不多呀，好像快了一丢丢，那丢会不会是心理作用。应该有别的好处，我暂时不细究。</p>
-<p>注册github账号<br>程序员的时光机器，你值得拥有。</p>
-<p>在github上创建一个和账号同名的repo<br>创建一个repo，名称格式为yourname.github.io.比如我的Github账号是hebaoying，所以这个repo的名称就是hebaoying.github.io.这个repo属于user repo，需要审核，创建完以后，直接做下一步吧。</p>
-<p>配置和使用github<br>检查本地开发环境是否安装了git和npm<br>输入以下指令检查是否安装。<br>git –version<br>npm –version<br>如果还没安装，请参考这篇文章进行安装。</p>
-<p>安装hexo<br>继续在terminal输入指令<br>npm install hexo -g<br>npm install hexo-cli -g</p>
-<p>创建本地工作目录<br>做到这里你的repo应该已经审核通过了。把你github的repo克隆下来。还记得你的repo地址吗？<br>我的repo地址是htttps://github.com/hebaoying/hebaoying.github.io<br>你的则是htttps://github.com/yourname/yourname.github.io（记住yourname就是你的github用户名）<br>输入指令拷贝repo到本地：<br>cd ~/Public<br>git clone <a href="https://github.com/hebaoying/hebaoying.github.io" target="_blank" rel="noopener">https://github.com/hebaoying/hebaoying.github.io</a></p>
-<p>初始化你的本地站点<br>hexo init yourname.github.io<br>cd yourname.github.io<br>npm install hexo-deployer-git -save<br>hexo generate<br>hexo server<br>现在可以在本地看到你的网站了。在浏览器输入localhost:4000</p>
-<p>部署到github上<br>在terminal输入 atom . （没有安装atom的参考这篇文章先进行开发环境设置再做下去）<br>在左侧面板选择_config.yml文件，拉到底下找到deploy部分，修改为：<br>deploy:<br>type: git<br>repo: <a href="https://github.com/yourname/yourname.github.io" target="_blank" rel="noopener">https://github.com/yourname/yourname.github.io</a><br>（记得yourname是你github的用户名）</p>
+        <h3 id="买域名"><a href="#买域名" class="headerlink" title="买域名"></a>买域名</h3><p>Godaddy或者万网，需要备案的请考虑后者，喜欢说话碰种边界的请考虑前者，我都买过，都不错，看需要。一般不考虑国内生意的话跟Godaddy买，针对国内市场的果断万网购买域名。注册然后付费这个不教了。</p>
+<h3 id="解析域名"><a href="#解析域名" class="headerlink" title="解析域名"></a>解析域名</h3><p>DNS解析选择DNSPod，这样整个网站访问就ok了，具体参考Godaddy注册商域名修改DNS地址。<br>Q：我不懂为啥要解析，感觉登陆速度差不多呀，好像快了一丢丢，那丢会不会是心理作用。应该有别的好处，我暂时不细究。</p>
+<h3 id="注册github账号"><a href="#注册github账号" class="headerlink" title="注册github账号"></a>注册github账号</h3><p>程序员的时光机器，你值得拥有。</p>
+<h3 id="在github上创建一个和账号同名的repo"><a href="#在github上创建一个和账号同名的repo" class="headerlink" title="在github上创建一个和账号同名的repo"></a>在github上创建一个和账号同名的repo</h3><p>创建一个repo，名称格式为yourname.github.io.比如我的Github账号是hebaoying，所以这个repo的名称就是hebaoying.github.io.这个repo属于user repo，需要审核，创建完以后，直接做下一步吧。</p>
+<h3 id="配置和使用github"><a href="#配置和使用github" class="headerlink" title="配置和使用github"></a>配置和使用github</h3><p>检查本地开发环境是否安装了git和npm<br>输入以下指令检查是否安装。<br>git –version<br>npm –version<br>如果还没安装，请参考这篇文章进行安装。</p>
+<h3 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h3><p>继续在terminal输入指令<br>npm install hexo -g<br>npm install hexo-cli -g</p>
+<a id="more"></a> 
+<h3 id="创建本地工作目录"><a href="#创建本地工作目录" class="headerlink" title="创建本地工作目录"></a>创建本地工作目录</h3><p>做到这里你的repo应该已经审核通过了。把你github的repo克隆下来。还记得你的repo地址吗？<br>我的repo地址是htttps://github.com/hebaoying/hebaoying.github.io<br>你的则是htttps://github.com/yourname/yourname.github.io（记住yourname就是你的github用户名）<br>输入指令拷贝repo到本地：<br>cd ~/Public<br>git clone <a href="https://github.com/hebaoying/hebaoying.github.io" target="_blank" rel="noopener">https://github.com/hebaoying/hebaoying.github.io</a></p>
+<h3 id="初始化你的本地站点"><a href="#初始化你的本地站点" class="headerlink" title="初始化你的本地站点"></a>初始化你的本地站点</h3><p>hexo init yourname.github.io<br>cd yourname.github.io<br>npm install hexo-deployer-git -save<br>hexo generate<br>hexo server<br>现在可以在本地看到你的网站了。在浏览器输入localhost:4000</p>
+<h3 id="部署到github上"><a href="#部署到github上" class="headerlink" title="部署到github上"></a>部署到github上</h3><p>在terminal输入 atom . （没有安装atom的参考这篇文章先进行开发环境设置再做下去）<br>在左侧面板选择_config.yml文件，拉到底下找到deploy部分，修改为：<br>deploy:<br>type: git<br>repo: <a href="https://github.com/yourname/yourname.github.io" target="_blank" rel="noopener">https://github.com/yourname/yourname.github.io</a><br>（记得yourname是你github的用户名）</p>
 <p>接好本地的桥，最后在terminal输入<br>hexo deploy<br>你做的网站上传上去了，所有人都可以看到了。网站就是yourname.github.io</p>
-<p>学习用markdown写文章<br>打印cheatsheet出来，看他几天用MD语句写几篇文章自然就懂了<br><a href="https://help.github.com/articles/about-writing-and-formatting-on-github/" target="_blank" rel="noopener">https://help.github.com/articles/about-writing-and-formatting-on-github/</a></p>
-<p>为atom安装几个有用的package</p>
-<ul>
+<h3 id="学习用markdown写文章"><a href="#学习用markdown写文章" class="headerlink" title="学习用markdown写文章"></a>学习用markdown写文章</h3><p>打印cheatsheet出来，看他几天用MD语句写几篇文章自然就懂了<br><a href="https://help.github.com/articles/about-writing-and-formatting-on-github/" target="_blank" rel="noopener">https://help.github.com/articles/about-writing-and-formatting-on-github/</a></p>
+<h3 id="为atom安装几个有用的package"><a href="#为atom安装几个有用的package" class="headerlink" title="为atom安装几个有用的package"></a>为atom安装几个有用的package</h3><ul>
 <li>platformio-ide-terminal 可以在atom 界面调出terminal</li>
 <li>markdown-scroll-sync</li>
 <li>linter-markdown</li>
@@ -340,17 +341,17 @@
 <li>markdown-preview</li>
 <li>ever-notedown让印象笔记和atom，还有github博客的文章同步，还在研究中</li>
 </ul>
-<p>给atom戴上眼镜<br>对了，安装package时候我还遇到过需要翻墙，老外给的方案是打开  文件，填入以下内容：</p>
-<p>Godaddy域名转址到github page<br>分别在本地hexo文件搭建和在Godaddy域名管理页面搭建。<br>本地文件夹yourname.github.io打开source文件夹，新建名为CNAME文件，内容为Godaddy购买的域名地址，我的是hebaoying.com.也可以完全在terminal完成：<br>cd ~/Public/hebaoying.github.io/souce/<br>echo hebaoying.com &gt; CNAME<br>git add CNAME<br>git commit -m “CNAME file or domain”<br>cd ~/Public/hebaoying.github.io/<br>cd hexo clean<br>hexo deploy</p>
-<p>Godaddy设置DNS解析：<br>删除所有类型为A的记录。<br>添加两条记录。</p>
+<h3 id="给atom戴上眼镜"><a href="#给atom戴上眼镜" class="headerlink" title="给atom戴上眼镜"></a>给atom戴上眼镜</h3><p>对了，安装package时候我还遇到过需要翻墙，老外给的方案是打开  文件，填入以下内容：</p>
+<h3 id="Godaddy域名转址到github-page"><a href="#Godaddy域名转址到github-page" class="headerlink" title="Godaddy域名转址到github page"></a>Godaddy域名转址到github page</h3><p>分别在本地hexo文件搭建和在Godaddy域名管理页面搭建。<br>本地文件夹yourname.github.io打开source文件夹，新建名为CNAME文件，内容为Godaddy购买的域名地址，我的是hebaoying.com.也可以完全在terminal完成：<br>cd ~/Public/hebaoying.github.io/souce/<br>echo hebaoying.com &gt; CNAME<br>git add CNAME<br>git commit -m “CNAME file or domain”<br>cd ~/Public/hebaoying.github.io/<br>cd hexo clean<br>hexo deploy</p>
+<h3 id="Godaddy设置DNS解析："><a href="#Godaddy设置DNS解析：" class="headerlink" title="Godaddy设置DNS解析："></a>Godaddy设置DNS解析：</h3><p>删除所有类型为A的记录。<br>添加两条记录。</p>
 <ol>
 <li>类型为”A (Host)” ，”主机” 为 @ ， “指向” = 192.30.252.153</li>
 <li>类型为”A (Host)” ，”主机” 为 @ ， “指向” = 192.30.252.154</li>
 </ol>
-<p>写文章<br>本地文章保存在_posts文件夹里，新建md文件，开始写就好了。</p>
-<p>建立404页面<br>自定义404页面仅对绑定顶级域名的项目才起作用。 推荐使用腾讯公益404.<a href="http://www.qq.com/404/" target="_blank" rel="noopener">http://www.qq.com/404/</a><br>使用方法，在source文件夹新建自己的 404.html 或者 404.md文件，输入代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;//qzonestyle.gtimg.cn/qzone/hybrid/app/404/search_children.js&quot; charset=&quot;utf-8&quot; homePageUrl=&quot;http://yoursite.com/yourPage.html&quot; homePageName=&quot;回到我的主页&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="写文章"><a href="#写文章" class="headerlink" title="写文章"></a>写文章</h3><p>本地文章保存在_posts文件夹里，新建md文件，开始写就好了。</p>
+<h3 id="建立404页面"><a href="#建立404页面" class="headerlink" title="建立404页面"></a>建立404页面</h3><p>自定义404页面仅对绑定顶级域名的项目才起作用。 推荐使用腾讯公益404.<a href="http://www.qq.com/404/" target="_blank" rel="noopener">http://www.qq.com/404/</a><br>使用方法，在source文件夹新建自己的 404.html 或者 404.md文件，输入代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;//qzonestyle.gtimg.cn/qzone/hybrid/app/404/search_children.js&quot; charset=&quot;utf-8&quot; homePageUrl=&quot;http://yoursite.com/yourPage.html&quot; homePageName=&quot;回到我的主页&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
 <p>其中yoursite.com/yourpage.html和文字“回到我的主页”可以自定义，记得改为自己的页面和合适的文字。</p>
-<p>改主题<br>我用的是next主题。<br>在终端窗口下，定位到 Hexo 站点目录下。使用 Git checkout 代码：</p>
+<h3 id="改主题"><a href="#改主题" class="headerlink" title="改主题"></a>改主题</h3><p>我用的是next主题。<br>在终端窗口下，定位到 Hexo 站点目录下。使用 Git checkout 代码：</p>
 <p>$ cd your-hexo-site<br>$ git clone <a href="https://github.com/iissnan/hexo-them-next" target="_blank" rel="noopener">https://github.com/iissnan/hexo-them-next</a> themes/next<br>做主题那个人有很详尽的教程，而且在github上有问必答，当然问问题前先自己找答案。99%情况下都能找到答案。设置语言、侧栏、头像啥啥的都在主题设置里面有。</p>
 
       
@@ -359,11 +360,6 @@
     <div>
       
         
-<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
-    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="何宝莹 wechat" style="width: 200px; max-width: 100%;"/>
-    <div>扫一扫关注我的公众号</div>
-</div>
-
 
       
     </div>
@@ -462,12 +458,12 @@
                src="http://hebaoying.com/uploads/avatar.png"
                alt="何宝莹" />
           <p class="site-author-name" itemprop="name">何宝莹</p>
-          <p class="site-description motion-element" itemprop="description">前端工程师|古典自由主义</p>
+          <p class="site-description motion-element" itemprop="description">攀高峰</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">22</span>
+              <span class="site-state-item-count">25</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -525,7 +521,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#买域名"><span class="nav-number">1.</span> <span class="nav-text">买域名</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#买域名"><span class="nav-number">1.</span> <span class="nav-text">买域名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解析域名"><span class="nav-number">2.</span> <span class="nav-text">解析域名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注册github账号"><span class="nav-number">3.</span> <span class="nav-text">注册github账号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在github上创建一个和账号同名的repo"><span class="nav-number">4.</span> <span class="nav-text">在github上创建一个和账号同名的repo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置和使用github"><span class="nav-number">5.</span> <span class="nav-text">配置和使用github</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装hexo"><span class="nav-number">6.</span> <span class="nav-text">安装hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建本地工作目录"><span class="nav-number">7.</span> <span class="nav-text">创建本地工作目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#初始化你的本地站点"><span class="nav-number">8.</span> <span class="nav-text">初始化你的本地站点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部署到github上"><span class="nav-number">9.</span> <span class="nav-text">部署到github上</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#学习用markdown写文章"><span class="nav-number">10.</span> <span class="nav-text">学习用markdown写文章</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为atom安装几个有用的package"><span class="nav-number">11.</span> <span class="nav-text">为atom安装几个有用的package</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#给atom戴上眼镜"><span class="nav-number">12.</span> <span class="nav-text">给atom戴上眼镜</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Godaddy域名转址到github-page"><span class="nav-number">13.</span> <span class="nav-text">Godaddy域名转址到github page</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Godaddy设置DNS解析："><span class="nav-number">14.</span> <span class="nav-text">Godaddy设置DNS解析：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#写文章"><span class="nav-number">15.</span> <span class="nav-text">写文章</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#建立404页面"><span class="nav-number">16.</span> <span class="nav-text">建立404页面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#改主题"><span class="nav-number">17.</span> <span class="nav-text">改主题</span></a></li></ol></div>
             
 
           </div>
